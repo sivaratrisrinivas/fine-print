@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Fine Print · pay, market and freshness for any role on the speedrun board</title>
+  <meta name="description" content="Paste a role from the speedrun talent network board. Get three answers: pay, market, freshness. Unofficial.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="glow" aria-hidden="true"></div>
+  <header class="top">
+    <p class="mark">Fine Print</p>
+    <p class="stamp" id="stamp">Loading live snapshot…</p>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-line">
+      <p class="eyebrow">The pay filter, read closely</p>
+      <h1 id="hero-line">Set a <span class="pick" id="floor-label">$150k</span> floor on <span class="pick" id="fn-label">engineering</span> roles.</h1>
+
+      <div class="controls" role="group" aria-label="Filters">
+        <label class="sel">
+          <span class="sr">Function</span>
+          <select id="fn"></select>
+        </label>
+        <div class="chips" id="floors" role="radiogroup" aria-label="Pay floor"></div>
+      </div>
+
+      <div class="bar" id="bar" role="img" aria-label="">
+        <span class="seg kept" id="seg-kept"></span><span class="seg silent" id="seg-silent"></span><span class="seg below" id="seg-below"></span>
+      </div>
+
+      <dl class="split">
+        <div class="n kept"><dt>stay visible</dt><dd id="n-kept">0</dd></div>
+        <div class="n silent"><dt>vanish because pay was never posted</dt><dd id="n-silent">0</dd></div>
+        <div class="n below"><dt>vanish because the posted pay is lower</dt><dd id="n-below">0</dd></div>
+      </dl>
+      <p class="verdict" id="verdict"></p>
+      <p class="aside" id="aside"></p>
+    </section>
+
+    <section class="lookup" aria-labelledby="lookup-title">
+      <p class="eyebrow" id="lookup-title">One role, three answers</p>
+      <form id="form" class="paste" autocomplete="off">
+        <label class="sr" for="ref">Role link or id</label>
+        <input id="ref" name="ref" inputmode="url" placeholder="Paste a speedrun-talent-network.com/jobs/… link">
+        <button type="submit">Read it</button>
+      </form>
+      <div class="presets" id="presets" aria-label="Or pick a live role"></div>
+      <div id="card-slot" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <details>
+      <summary>How the numbers are computed</summary>
+      <div id="method"></div>
+    </details>
+    <p class="legal">Unofficial. Not affiliated with or endorsed by a16z, a16z speedrun, or the speedrun talent network. Data is read from their public API at the snapshot time above; every role links back to its listing on speedrun-talent-network.com.</p>
+  </footer>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

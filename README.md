@@ -43,7 +43,6 @@ The wording is descriptive on purpose. A long-open listing is described as "post
 - Every request sends a `User-Agent` that names the project, plus `?source=fine-print-gift` attribution.
 - Pasted-role lookups make two reads: the job, and its company's posted-date facets. The CDN caches them for 30 minutes per role, and each instance caps upstream reads at 20 a minute.
 - Listings aren't re-hosted. The app keeps aggregates and a handful of preset cards, and every role links to its canonical URL.
-- The deployment is noindex, so nothing here competes with the board.
 
 ## Run it locally
 

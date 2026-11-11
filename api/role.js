@@ -14,7 +14,6 @@ export default async function handler(req, res) {
   snapshot ??= JSON.parse(readFileSync(join(process.cwd(), 'public', 'data', 'snapshot.json'), 'utf8'));
   const url = new URL(req.url, 'http://x');
   const ref = url.searchParams.get('ref') ?? '';
-  res.setHeader('x-robots-tag', 'noindex, nofollow');
   const now = Date.now();
   while (recent.length && now - recent[0] > 60_000) recent.shift();
   if (recent.length >= CAP_PER_MIN) {

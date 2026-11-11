@@ -20,7 +20,6 @@ const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '
 
 createServer(async (req, res) => {
   const url = new URL(req.url, 'http://localhost');
-  res.setHeader('x-robots-tag', 'noindex, nofollow');
   if (url.pathname === '/api/role') {
     const ref = url.searchParams.get('ref') ?? '';
     try {
